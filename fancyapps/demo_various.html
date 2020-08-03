@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <title>fancyBox Various Demo</title>
+    <!-- Bootstrap 4.5.0 CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.4.5.0.min.css">
+    <!-- fancyBox CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/jquery.fancybox.3.5.7.min.css">
+    <!-- fancyapps CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/fancyapps.fancybox3.style.css" media="screen" />
+    <!-- JQuery script asset -->
+    <script type="text/javascript" src="../static/js/jquery.3.5.1.min.js"></script>
+    <!-- fancyBox JS asset -->
+    <script type="text/javascript" src="../static/js/jquery.fancybox.3.5.7.min.js"></script>
+    <!-- fancyBox Spanish JS asset -->
+    <script type="text/javascript" src="../static/js/fancybox.i18n.spanish.js"></script>
+</head>
+<body>
+    <!-- Various Demo -->
+    <div class="container">
+        <div class="row">
+
+            <h1 class="mb-4" style="margin-top:10vh;">Various</h1>
+
+            <p>
+                Display HTML elements, web pages, video, google maps and also load content via AJAX with ease.
+
+                You can mix images, videos and any HTML content in each gallery.
+            </p>
+
+            <div class="card-deck mb-sm-4">
+
+                <!--  #1 -->
+                <div class="card p-lg-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Hidden HTML element
+                        </p>
+                        <p class="mb-0">
+                            <a data-fancybox="hello" data-src="#hello" href="javascript:;" class="btn btn-primary">
+                                Open demo
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <form id="hello" action="" method="post" style="display: none; width: 100%; max-width: 660px;" class="">
+                    <h2 class="mb-3">
+                        Hello!
+                    </h2>
+                    <p>
+                        The first focusable element in the modal gets the focus for better accessibility.
+                        <br>
+                        The script traps focus within the modal to disable the user to access the content behind it.
+
+                        Focus is restored to last focused element when modal closes.
+                    </p>
+                    <p>
+                        <input type="text" value="" name="hi1" class="form-control" placeholder="Example input">
+                    </p>
+                    <p>
+                        <input type="text" value="" name="hi2" class="form-control" placeholder="Another input">
+                    </p>
+                    <p class="mb-0 text-right">
+                        <input data-fancybox-close="" type="button" class="btn btn-primary" value="Submit">
+                    </p>
+                </form>
+
+
+                <!--  #2 -->
+                <div class="card p-lg-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Custom design and open/close animation
+                        </p>
+                        <p class="mb-0">
+                            <a data-fancybox="" data-animation-duration="500" data-src="#animatedModal" href="javascript:;" class="btn btn-primary">Open demo</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: none;" id="animatedModal" class="animated-modal text-center p-5">
+                    <h2>
+                        Success!
+                    </h2>
+                    <p>
+                        That thing that you were trying to do worked.<br>
+                    </p>
+                    <p class="mb-0">
+                        <svg width="150" height="150" viewBox="0 0 510 510" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path fill="#fff" d="M150.45,206.55l-35.7,35.7L229.5,357l255-255l-35.7-35.7L229.5,285.6L150.45,206.55z M459,255c0,112.2-91.8,204-204,204 S51,367.2,51,255S142.8,51,255,51c20.4,0,38.25,2.55,56.1,7.65l40.801-40.8C321.3,7.65,288.15,0,255,0C114.75,0,0,114.75,0,255 s114.75,255,255,255s255-114.75,255-255H459z"></path>
+                        </svg>
+                    </p>
+                </div>
+
+                <style type="text/css">
+                    /*
+
+                    Styles for animated modal
+                    =========================
+
+                    */
+
+                    /* Start state */
+                    .animated-modal {
+                        max-width: 550px;
+                        border-radius: 4px;
+                        overflow: hidden;
+                        background: linear-gradient(45deg, #543093 32%, #d960ae 100%);
+
+                        transform: translateY(-80px);
+                        transition: all .5s; /* Should match `data-animation-duration` parameter */
+                    }
+
+                    .animated-modal * {
+                        color: #fff;
+                    }
+
+                    .animated-modal h2,
+                    .animated-modal p {
+                        transform: translateY(-40px);
+                        opacity: 0;
+
+                        transition-property: transform, opacity;
+                        transition-duration: .3s;
+                    }
+
+                    /* Final state */
+                    .fancybox-slide--current .animated-modal,
+                    .fancybox-slide--current .animated-modal h2,
+                    .fancybox-slide--current .animated-modal p {
+                        transform: translateY(0);
+                        opacity: 1;
+
+                        transition-duration: .3s;
+                    }
+
+                    /* Reveal content with different delays */
+                    .fancybox-slide--current .animated-modal h2 {
+                        transition-delay: .1s;
+                    }
+
+                    .fancybox-slide--current .animated-modal p {
+                        transition-delay: .4s;
+                    }
+
+                    .fancybox-slide--current .animated-modal p:first-of-type {
+                        transition-delay: .2s;
+                    }
+
+                </style>
+
+                <!--  #3 -->
+                <div class="card p-lg-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Modal window
+                        </p>
+                        <p class="mb-0">
+                            <a data-fancybox="" data-src="#trueModal" data-modal="true" href="javascript:;" class="btn btn-primary">Open demo</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="trueModal" class="p-5" style="display: none;max-width:600px;">
+                    <h2>
+                        I'm a modal!
+                    </h2>
+                    <p>
+                        You can close me only by pressing custom button below.
+                    </p>
+                    <p>
+                        It would also be possible to prevent closing using <code>beforeClose</code> callback.
+                    </p>
+                    <p>
+                        <button data-fancybox-close="" class="btn btn-primary">Close me</button>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-sm-4">
+
+                <!--  #1 -->
+                <div class="card p-lg-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Auto-resize iframe based on content
+                        </p>
+                        <p class="mb-0">
+                            <a data-fancybox="" data-type="iframe" href="quickstart.html" class="btn btn-primary">
+                                Open demo
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!--  #2 -->
+                <div class="card p-lg-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Display Google map
+                        </p>
+                        <p class="mb-0">
+                            <a data-fancybox="" data-options="{&quot;iframe&quot; : {&quot;css&quot; : {&quot;width&quot; : &quot;80%&quot;, &quot;height&quot; : &quot;80%&quot;}}}" href="https://www.google.com/maps/search/?api=1&amp;query=centurylink+field" class="btn btn-primary">Open demo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

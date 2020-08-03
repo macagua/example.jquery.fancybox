@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <title>fancyBox Videos Demo</title>
+    <!-- Bootstrap 4.5.0 CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.4.5.0.min.css">
+    <!-- fancyBox CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/jquery.fancybox.3.5.7.min.css">
+    <!-- fancyapps CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/fancyapps.fancybox3.style.css" media="screen" />
+    <!-- JQuery script asset -->
+    <script type="text/javascript" src="../static/js/jquery.3.5.1.min.js"></script>
+    <!-- fancyBox JS asset -->
+    <script type="text/javascript" src="../static/js/jquery.fancybox.3.5.7.min.js"></script>
+    <!-- fancyBox Spanish JS asset -->
+    <script type="text/javascript" src="../static/js/fancybox.i18n.spanish.js"></script>
+</head>
+<body>
+    <!-- videos gallery -->
+    <div class="container">
+        <div class="row">
+
+            <h1 id="video" class="mb-4 pt-4" style="margin-top:5vh;">Video</h1>
+
+            <p>
+                YouTube &amp; Vimeo videos can be used with fancybox by just providing the page URL.
+
+                Integrated HTML5 video player will play MP4 videos using a browser's native video capabilities.
+            </p>
+            <p>
+                Videos are responsive and will always fit within the window while maintaining correct aspect ratio.
+            </p>
+
+
+            <div class="card-deck mb-sm-4 video-deck">
+
+                <div class="card">
+                    <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
+                        <!-- <img class="card-img-top img-fluid" src="https://img.youtube.com/vi/_sI_Ps7JSEk/mqdefault.jpg"> -->
+                        <img class="card-img-top img-fluid" src="../static/img/_sI_Ps7JSEk.jpg">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Default settings of YouTube video
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <a data-fancybox data-ratio="2" href="https://vimeo.com/191947042">
+                        <!-- <img class="card-img-top img-fluid" src="https://i.vimeocdn.com/video/604514162_640.jpg"> -->
+                        <img class="card-img-top img-fluid" src="../static/img/604514162_640.jpg">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Vimeo video with custom aspect ratio (2/1)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <a data-fancybox="bigbuckbunny" data-width="640" data-height="360" href="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4">
+                        <!-- <img class="card-img-top img-fluid" src="https://peach.blender.org/wp-content/uploads/bird1.jpg" /> -->
+                        <img class="card-img-top img-fluid" src="../static/img/bird1.jpg" />
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Direct link to HTML5 video
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck mb-4 video-deck">
+
+                <div class="card">
+                    <a data-fancybox data-width="640" data-height="360" href="https://www.youtube.com/watch?v=DLX62G4lc44">
+                        <!-- <img class="card-img-top img-fluid" src="https://img.youtube.com/vi/DLX62G4lc44/mqdefault.jpg"> -->
+                        <img class="card-img-top img-fluid" src="../static/img/DLX62G4lc44.jpg">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Custom video dimensions (aspect ratio is automatically calculated)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <a data-fancybox data-width="640" data-height="360" data-small-btn="true" href="https://youtu.be/rahRaVtEQaM?t=15m43s">
+                        <!-- <img class="card-img-top img-fluid" src="https://img.youtube.com/vi/rahRaVtEQaM/mqdefault.jpg"> -->
+                        <img class="card-img-top img-fluid" src="../static/img/rahRaVtEQaM.jpg">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Display close button on top of the video; custom start time
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <a data-fancybox="html5-video" href="#myVideo">
+                        <!-- <img class="card-img-top img-fluid" src="https://www.html5rocks.com/en/tutorials/video/basics/poster.png" /> -->
+                        <img class="card-img-top img-fluid" src="../static/img/poster.png" />
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Hidden HTML5 video element</p>
+                    </div>
+                    <video width="640" height="320" controls id="myVideo" style="display:none;">
+                        <source src="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.mp4" type="video/mp4">
+                        <source src="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.webm" type="video/webm">
+                        <source src="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.ogv" type="video/ogg">
+                        Your browser doesn't support HTML5 video tag.
+                    </video>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                /*
+                    Make cards clickable
+                    ====================
+                */
+
+                $('.video-deck .card-body').on('click', function() {
+                    $(this).parent().find("a").trigger('click');
+                });
+
+                /*
+
+                    Set caption from card text
+                    ==========================
+                */
+
+                $('.video-deck a').fancybox({
+                    caption : function( instance, item ) {
+                        return $(this).parent().find('.card-text').html();
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>

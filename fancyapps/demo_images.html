@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <title>fancyBox Demo Images</title>
+    <!-- Bootstrap 4.5.0 CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.4.5.0.min.css">
+    <!-- fancyBox CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/jquery.fancybox.3.5.7.min.css">
+    <!-- fancyapps CSS asset -->
+    <link type="text/css" rel="stylesheet" href="../static/css/fancyapps.fancybox3.style.css" media="screen" />
+    <!-- JQuery script asset -->
+    <script type="text/javascript" src="../static/js/jquery.3.5.1.min.js"></script>
+    <!-- fancyBox JS asset -->
+    <script type="text/javascript" src="../static/js/jquery.fancybox.3.5.7.min.js"></script>
+    <!-- fancyBox Spanish JS asset -->
+    <script type="text/javascript" src="../static/js/fancybox.i18n.spanish.js"></script>
+</head>
+<body>
+    <!-- images gallery -->
+    <div class="container">
+        <div class="row">
+            <div class="row mb-4">
+                <div class="col-6 col-lg-4">
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_1.jpeg" data-width="1536" data-height="2304">
+                            <img class="img-fluid" src="../static/img/small_1.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Rocky mountain under blue and white sky</h6>
+                            <a href="https://unsplash.com/photos/lSXpV8bDeMA">Photo by Guillaume Briard</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_2.jpeg" data-width="1279" data-height="853">
+                            <img class="img-fluid" src="../static/img/small_2.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Vaihingen an der Enz, Germany</h6>
+                            <a href="https://unsplash.com/photos/ty4X72BSsXY">Photo by Oliver Roos</a>
+                        </figcaption>
+                    </figure>
+
+                </div>
+                <div class="col-6 col-lg-4">
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_3.jpeg" data-width="1279" data-height="719">
+                            <img class="img-fluid" src="../static/img/small_3.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Closeup photo of world globe</h6>
+                            <a href="https://unsplash.com/photos/QkPb5g9p338">Photo by chuttersnap</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_4.jpeg" data-width="1279" data-height="853">
+                            <img class="img-fluid" src="../static/img/small_4.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Blessed are the curious, for they shall have adventures. 🚩</h6>
+                            <a href="https://unsplash.com/photos/z55CR_d0ayg">Photo by Andrew Neel</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_5.jpeg" data-width="1020" data-height="858">
+                            <img class="img-fluid" src="../static/img/small_5.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Man holding pair of ski poles in front of trees</h6>
+                            <a href="https://unsplash.com/photos/IbLZjKcelpM">Photo by Oziel Gómez</a>
+                        </figcaption>
+                    </figure>
+
+                </div>
+                <div class="col-6 col-lg-4 d-none d-lg-block">
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_6.jpeg" data-width="1279" data-height="870">
+                            <img class="img-fluid" src="../static/img/small_6.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Aerial photo of person using paddleboard</h6>
+                            <a href="https://unsplash.com/photos/KgCbvOWYuU0">Photo by Ishan @seefromthesky</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a class="d-block mb-4" data-fancybox="images" href="../static/img/big_7.jpeg" data-width="1519" data-height="2279">
+                            <img class="img-fluid" src="../static/img/small_7.jpeg">
+                        </a>
+                        <figcaption>
+                            <h6>Car on curve road surrounded by trees</h6>
+                            <a href="https://unsplash.com/photos/O7qK1vQY3p0">Photo by Grant Porter</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+
+                // Clone defaults
+                var imgOpts = $.extend(true, {}, $.fancybox.defaults, {
+                    caption : function( instance, item ) {
+                        return $(this).next('figcaption').html();
+                    }
+                });
+
+                // Shortcut to apply options to image gallery
+                function applyImgOpts() {
+                    $('[data-fancybox="images"]').fancybox(imgOpts);
+                }
+
+                $("#imgOpts select").change(function () {
+                    var opt = $(this).attr("id");
+                    var val = $(this).val();
+
+                    imgOpts[opt] = val === "" ? false : val;
+
+                    // Make "fade" transiton faster than others
+                    if (opt === 'transitionEffect') {
+                        imgOpts['transitionDuration'] = opt === 'fade' ? 330 : 550;
+                    }
+
+                    applyImgOpts();
+                });
+
+                $("#imgOpts input[type=radio][name=lang]").on("change", function () {
+                    imgOpts.lang = $(this).val();
+
+                    applyImgOpts();
+                });
+
+                $("#imgOpts .toggle").change(function () {
+                    if (this.id === 'thumbs') {
+                        imgOpts.thumbs.autoStart = this.checked ? true : false;
+                    } else {
+                        imgOpts[this.id] = this.checked ? true : false;
+                    }
+
+                    applyImgOpts();
+                });
+
+                $("#imgOpts .buttons").change(function () {
+                    var buttonArr = $('input:checkbox:checked.buttons').map(function () {
+                        return this.value;
+                    }).get();
+
+                    buttonArr.push('close');
+
+                    imgOpts.buttons = buttonArr;
+
+                    applyImgOpts();
+                });
+
+                applyImgOpts();
+
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>
